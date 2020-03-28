@@ -1,0 +1,8 @@
+﻿CREATE TABLE [dbo].[Item] (
+[Id] INT IDENTITY NOT NULL,
+[CategoryId] INT NOT NULL,
+[Title] NVARCHAR(250) NOT NULL,
+[Price] FLOAT NOT NULL,
+CONSTRAINT PK_Item_Id PRIMARY KEY ([Id]),
+CONSTRAINT Fk_Item_CategoryId FOREIGN KEY ([CategoryId]) REFERENCES [Category]([Id])
+)

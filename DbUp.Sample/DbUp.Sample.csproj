@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+    <ItemGroup>
+        <EmbeddedResource Include="Scripts\*"/>
+        <EmbeddedResource Include="SeedData\*"/>
+    </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommandLineParser" Version="2.7.82" />
+    <PackageReference Include="dbup-sqlserver" Version="4.3.1" />
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="dotnet $(MSBuildProjectDirectory)\$(OutDir)$(AssemblyName).dll deploy --connection-string &quot;Server=localhost;Initial Catalog=sample;User ID=sa;Password='yourStrong(!)Password';Encrypt=True;TrustServerCertificate=True;Connection Timeout=30;&quot; --seed-data" />
+  </Target>
+
+</Project>

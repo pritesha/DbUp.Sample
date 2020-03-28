@@ -1,0 +1,5 @@
+﻿CREATE TABLE [dbo].[Category] (
+[Id] INT IDENTITY NOT NULL,
+[Title] NVARCHAR(250) NOT NULL,
+CONSTRAINT Pk_Category_Id PRIMARY KEY ([Id])
+)
