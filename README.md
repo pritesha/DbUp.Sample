@@ -18,5 +18,5 @@ dotnet run deploy --connection-string "Server=localhost;Initial Catalog=sample;U
 
 7. To Drop the database from prompt : 
 ```
-dotnet run destrop --connection-string "Server=localhost;Initial Catalog=sample;User ID=sa;Password='yourStrong(!)Password';Encrypt=True;TrustServerCertificate=True;Connection Timeout=30;" --force
+dotnet run destroy --connection-string "Server=localhost;Initial Catalog=sample;User ID=sa;Password='yourStrong(!)Password';Encrypt=True;TrustServerCertificate=True;Connection Timeout=30;" --force
 ```
