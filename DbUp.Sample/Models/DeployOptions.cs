@@ -8,10 +8,10 @@ namespace DbUp.Sample.Models
     [Verb("deploy", HelpText = "Deploy & Create Database")]
     public class DeployOptions
     {
-        [Option('c', "connection-string", Required = true, HelpText = "Connection string for the database")]
+        [Option("connection-string", Required = true, HelpText = "Connection string for the database")]
         public string ConnectionString { get; set; }
 
-        [Option('s', "seed-data", Required = true, HelpText = "option to run seed data as part of deployment")]
+        [Option("seed-data", Default =false, HelpText = "option to run seed data as part of deployment")]
         public bool SeedData { get; set; }
     }
 }
